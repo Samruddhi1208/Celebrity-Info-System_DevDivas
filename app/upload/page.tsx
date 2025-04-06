@@ -11,6 +11,7 @@ import { Upload, Camera, ArrowLeft, Info } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import "app/global.css";
 
 export default function UploadPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
@@ -66,6 +67,212 @@ export default function UploadPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-50 to-white">
       <header className="container mx-auto py-6 flex items-center justify-between">
+      <style jsx>{`
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .border-dashed {
+    border-style: dashed;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .text-sky-400 {
+    color: #38bdf8;
+  }
+
+  .bg-sky-400 {
+    background-color: #38bdf8;
+  }
+
+  .bg-sky-500 {
+    background-color: #0ea5e9;
+  }
+
+  .text-sky-500 {
+    color: #0ea5e9;
+  }
+
+  .bg-sky-50 {
+    background-color: #f0f9ff;
+  }
+
+  .text-slate-800 {
+    color: #1e293b;
+  }
+
+  .text-gray-500 {
+    color: #6b7280;
+  }
+
+  .text-slate-700 {
+    color: #334155;
+  }
+
+  .bg-slate-100 {
+    background-color: #f1f5f9;
+  }
+
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+
+  .p-12 {
+    padding: 3rem;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .max-w-md {
+    max-width: 28rem;
+  }
+
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+
+  .font-medium {
+    font-weight: 500;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+
+  .text-4xl {
+    font-size: 2.25rem;
+  }
+
+  .list-disc {
+    list-style-type: disc;
+  }
+
+  .list-inside {
+    list-style-position: inside;
+  }
+
+  .gap-2 {
+    gap: 0.5rem;
+  }
+
+  .gap-3 {
+    gap: 0.75rem;
+  }
+
+  .gap-4 {
+    gap: 1rem;
+  }
+
+  .gap-8 {
+    gap: 2rem;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .rounded-full {
+    border-radius: 9999px;
+  }
+
+  .h-16 {
+    height: 4rem;
+  }
+
+  .w-16 {
+    width: 4rem;
+  }
+
+  .h-12 {
+    height: 3rem;
+  }
+
+  .w-12 {
+    width: 3rem;
+  }
+
+  .text-sm {
+    font-size: 0.875rem;
+  }
+
+  .text-xl {
+    font-size: 1.25rem;
+  }
+
+  .container {
+    max-width: 1280px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .mt-1 {
+    margin-top: 0.25rem;
+  }
+
+  .mt-12 {
+    margin-top: 3rem;
+  }
+
+  .border-t {
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .border-gray-100 {
+    border-color: #f3f4f6;
+  }
+
+  .border-2 {
+    border-width: 2px;
+  }
+
+  .border-sky-200 {
+    border-color: #bae6fd;
+  }
+`}</style>
+
         <div className="text-sky-400 font-bold text-2xl">LOGO</div>
         <nav className="hidden md:flex space-x-10">
           <Link href="/" className="text-gray-500 font-medium">
